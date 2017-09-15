@@ -3,8 +3,11 @@ tags:
   - execution context
   - functions
   - scope chain
+  - javascript engine
+  - identifiers
+  - identifier resolution
   - readme
 languages:
   - javascript
 resources:
-  - 0
+  - 1
