@@ -146,9 +146,7 @@ The first pass is the _compilation phase_, in which the engine steps through our
 
 2. When the engine encounters a function declaration, it does three things:
     - Allocates memory and sets up a reference to the function's identifier, e.g., `myFunc`.
-
     - Creates a new execution context with a new scope.
-
     - Adds a reference to the parent scope (the outer environment) to the scope chain, making variables and functions declared in the outer environment available in the new function's scope.
 
 #### Execution phase
