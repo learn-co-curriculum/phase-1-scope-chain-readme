@@ -121,6 +121,7 @@ Okay, we have an idea of what the scope chain is, but how does it actually work 
 ### Identifiers
 
 As a brief refresher, when we declare a variable or a function, we provide a name that allows us to refer back to it:
+
 ```js
 const myVar = "myVar refers to the variable that contains this string";
 // => undefined
@@ -140,10 +141,15 @@ When our JavaScript code is run in the browser, the JavaScript engine actually m
 #### Compilation phase
 
 The first pass is the _compilation phase_, in which the engine steps through our code line-by-line:
+
 1. When it reaches a variable declaration, the engine allocates memory and sets up a reference to the variable's identifier, e.g., `myVar`.
+
 2. When the engine encounters a function declaration, it does three things:
+
     - Allocates memory and sets up a reference to the function's identifier, e.g., `myFunc`.
+
     - Creates a new execution context with a new scope.
+
     - Adds a reference to the parent scope (the outer environment) to the scope chain, making variables and functions declared in the outer environment available in the new function's scope.
 
 #### Execution phase
