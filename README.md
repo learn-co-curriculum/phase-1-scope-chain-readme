@@ -145,7 +145,6 @@ The first pass is the _compilation phase_, in which the engine steps through our
 1. When it reaches a variable declaration, the engine allocates memory and sets up a reference to the variable's identifier, e.g., `myVar`.
 
 2. When the engine encounters a function declaration, it does three things:
-
     - Allocates memory and sets up a reference to the function's identifier, e.g., `myFunc`.
 
     - Creates a new execution context with a new scope.
