@@ -14,11 +14,7 @@ Every function in JavaScript has access to a _scope chain_, which includes refer
 
 ## Nested scopes and the scope chain
 
-<picture>
-  <source srcset="https://curriculum-content.s3.amazonaws.com/web-development/js/principles/scope-chain-readme/nested_elevators.webp" type="image/webp">
-  <source srcset="https://curriculum-content.s3.amazonaws.com/web-development/js/principles/scope-chain-readme/nested_elevators.gif" type="image/gif">
-  <img src="https://curriculum-content.s3.amazonaws.com/web-development/js/principles/scope-chain-readme/nested_elevators.gif" alt="Nested elevators">
-</picture>
+![Nested elevators](https://curriculum-content.s3.amazonaws.com/web-development/js/principles/scope-chain-readme/nested_elevators.gif)
 
 In addition to the `#engineering` channel, every software engineer is a member of Flatbook's `#general` channel. Engineers can see all of the messages sent in both channels. If a message in `#general` piques our interest, we can refer to the message in `#engineering` despite the fact that it was posted in `#general`. To bend the analogy back towards functions and scope, everything _declared_ in `#general` is accessible in `#engineering`. `#general`, our global scope, is effectively the _outer scope_ for `#engineering`.
 
@@ -188,5 +184,6 @@ During the compilation phase, a reference to `myVar` is created in the global sc
 This topic might feel a bit esoteric, but it's critical to understanding how identifier lookups happen in JavaScript. That is, when the JavaScript engine encounters a variable or function, how it knows what value or function to retrieve from memory. If the engine finds the identifier declared locally, it uses that value. However, if it doesn't find a local match, it then looks up (or down, depending on your perspective) the scope chain until it either finds a match in an outer scope or throws an `Uncaught ReferenceError`.
 
 ## Resources
+
 - MDN
   + [Functions — Name conflicts](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Name_conflicts)
