@@ -23,8 +23,6 @@ resolution_ and the _scope chain_.
 
 ## Nested scopes and the scope chain
 
-![Nested elevators](https://curriculum-content.s3.amazonaws.com/web-development/js/principles/scope-chain-readme/nested_elevators.gif)
-
 In addition to the `#engineering` channel, every software engineer is a member
 of Flatbook's `#general` channel. Engineers can see all of the messages sent in
 both channels. If a message in `#general` piques our interest, we can refer to
@@ -45,7 +43,7 @@ functions declared in the outer scope**. Let's see that in action:
 ```js
 const globalVar = 1;
 
-function firstFunc () {
+function firstFunc() {
   const firstVar = 2;
 
   return firstVar + globalVar;
@@ -58,8 +56,7 @@ firstFunc();
 `firstVar` is declared inside the function, and `globalVar` is declared in the
 outer scope, but we have access to **both** inside `firstFunc()`.
 
-When we invoke `firstFunc()`, the first line of code inside the function, `const
-firstVar = 2;`, runs first, creating a new local variable. When the JavaScript
+When we invoke `firstFunc()`, the first line of code inside the function, `const firstVar = 2;`, runs first, creating a new local variable. When the JavaScript
 engine reaches the function's second line, it sees the reference to `firstVar`
 and says, "Great, I know what that means: it's a local variable!" Then, the
 engine encounters the reference to `globalVar` and says, "What the heck is
@@ -71,7 +68,7 @@ up variables declared in outer scopes, we say they have access to a _scope
 chain_. Through the scope chain, a function has access to all variables and
 functions declared in its outer scope.
 
-***Top Tip***: What matters for the scope chain is where the function is
+**_Top Tip_**: What matters for the scope chain is where the function is
 declared — not where it is invoked.
 
 We can think of JavaScript scopes as a nested system:
@@ -87,10 +84,10 @@ chain:
 ```js
 const globalVar = 1;
 
-function firstFunc () {
+function firstFunc() {
   const firstVar = 2;
 
-  function secondFunc () {
+  function secondFunc() {
     const secondVar = 3;
 
     return secondVar + firstVar + globalVar;
@@ -119,29 +116,29 @@ declared inside `b()` and `b()` is declared inside `c()`, `a()` has access to
 functions and variables declared in its own scope, `b()`'s scope, and `c()`'s
 scope. That's the scope chain in action!
 
-***NOTE***: The scope chain only goes in one direction. An outer scope **does
+**_NOTE_**: The scope chain only goes in one direction. An outer scope **does
 not have access to things declared in an inner scope**. In the previous code
 snippet, `firstFunc()` **cannot access `secondVar`**. In addition, two functions
 declared in the same scope do not have access to anything declared in the
 other's scope:
 
 ```js
-const fruit = 'Apple';
+const fruit = "Apple";
 
-function first () {
-  const vegetable = 'Broccoli';
+function first() {
+  const vegetable = "Broccoli";
 
-  console.log('fruit:', fruit);
-  console.log('vegetable:', vegetable);
-  console.log('legume:', legume);
+  console.log("fruit:", fruit);
+  console.log("vegetable:", vegetable);
+  console.log("legume:", legume);
 }
 
-function second () {
-  const legume = 'Peanut';
+function second() {
+  const legume = "Peanut";
 
-  console.log('fruit:', fruit);
-  console.log('legume:', legume);
-  console.log('vegetable:', vegetable);
+  console.log("fruit:", fruit);
+  console.log("legume:", legume);
+  console.log("vegetable:", vegetable);
 }
 ```
 
@@ -174,7 +171,7 @@ name that allows us to refer back to it:
 const myVar = "myVar refers to the variable that contains this string";
 // => undefined
 
-function myFunc () {
+function myFunc() {
   return "myFunc refers to this function that returns this string";
 }
 // => undefined
@@ -197,12 +194,12 @@ code line-by-line:
    up a reference to the variable's identifier, e.g., `myVar`.
 
 2. When the engine encounters a function declaration, it does three things:
-    - Allocates memory and sets up a reference to the function's identifier,
-      e.g., `myFunc`.
-    - Creates a new execution context with a new scope.
-    - Adds a reference to the parent scope (the outer environment) to the scope
-      chain, making variables and functions declared in the outer environment
-      available in the new function's scope.
+   - Allocates memory and sets up a reference to the function's identifier,
+     e.g., `myFunc`.
+   - Creates a new execution context with a new scope.
+   - Adds a reference to the parent scope (the outer environment) to the scope
+     chain, making variables and functions declared in the outer environment
+     available in the new function's scope.
 
 #### Execution phase
 
@@ -243,7 +240,7 @@ variables or functions in multiple scopes:
 ```js
 const myVar = 42;
 
-function myFunc () {
+function myFunc() {
   const myVar = 9001;
 
   return myVar;
