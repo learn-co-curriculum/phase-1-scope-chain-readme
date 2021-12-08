@@ -56,11 +56,12 @@ firstFunc();
 `firstVar` is declared inside the function, and `globalVar` is declared in the
 outer scope, but we have access to **both** inside `firstFunc()`.
 
-When we invoke `firstFunc()`, the first line of code inside the function, `const firstVar = 2;`, runs first, creating a new local variable. When the JavaScript
-engine reaches the function's second line, it sees the reference to `firstVar`
-and says, "Great, I know what that means: it's a local variable!" Then, the
-engine encounters the reference to `globalVar` and says, "What the heck is
-this?! That's not declared locally!"
+When we invoke `firstFunc()`, the first line of code inside the function,
+`const firstVar = 2;`, runs first, creating a new local variable. When the
+JavaScript engine reaches the function's second line, it sees the reference to
+`firstVar` and says, "Great, I know what that means: it's a local variable!"
+Then, the engine encounters the reference to `globalVar` and says, "What the
+heck is this?! That's not declared locally!"
 
 When the engine can't find a local match, it then goes looking in the outer
 scope and — voilà! — finds a match there. Because of the way functions can look
