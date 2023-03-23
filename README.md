@@ -244,9 +244,9 @@ JavaScript looks for it in the closest outer scope, it cannot find it in
 `isOut()` either. So, it goes one step further out to the global scope, where it
 successfully finds `player`'s value.
 
-When looking up variables, JavaScript will always look at its current scope
+**When looking up variables, JavaScript will always look at its current scope
 first. Then, if unfound, it will continue moving up the scope chain until the
-the variable's value is found.
+the variable's value is found.**
 
 Next, let's take a look at the `if` statement block.
 
@@ -281,9 +281,9 @@ find it anywhere, it will then declare it as a new global variable.
 In this case, `atBat` is found in the `isOut()` function scope. Thus, it gets
 reassigned rather than globally declared.
 
-Those are the basics to how the scope chain works! If it seems like a lot to
-take in, again that is OK. Your sense for scope will develop the more code you
-write, and the more `ReferenceError` bugs you run into and fix.
+Those are the basics to how the scope chain works! If the concept is still
+fuzzy, that is OK. Your sense for scope will develop the more code you write,
+and the more `ReferenceError` bugs you run into and fix.
 
 As a matter of fact, let's do some of that together.
 
@@ -364,6 +364,32 @@ each other's scopes**. Again, the scope chain only goes _one way_, from inner to
 outer. Or, in this context, it only goes up. It can not go sideways.
 
 ## Conclusion
+
+Let's summarize the rules we've discovered throughout this scope chain journey.
+You can refer back to this list as a cheatsheet:
+
+- Scopes can be nested, which creates a scope chain.
+  - Each function or block of code has its own scope chain.
+- When looking up variables, JavaScript will always look at its current scope
+  first.
+  - If a variable is not found within the current scope, it will move _up_ the
+    scope chain until it finds it.
+- When a variable is given a value without a keyword, JavaScript will first try
+  to look for the variable in its scope chain.
+  - If the variable exists in the chain, it will _reassign_ the value.
+  - If the variable does not exist in the chain, it will _declare_ the variable
+    and it will become globally scoped.
+- The scope chain can only be traversed in one direction.
+  - From the inner scope to the outermost scope, never the reverse, nor
+    sideways.
+
+This topic might feel a bit esoteric, but it's critical to understanding how
+identifier lookups happen in JavaScript. That is, when the JavaScript engine
+encounters a variable or function, how it knows what value or function to
+retrieve from memory. If the engine finds the identifier declared locally, it
+uses that value. However, if it doesn't find a local match, it then looks up the
+scope chain until it either finds a match in an outer scope or throws a
+`ReferenceError`.
 
 ## Resources
 
