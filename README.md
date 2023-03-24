@@ -2,9 +2,10 @@
 
 ## Learning Goals
 
-- one
-- two
-- three
+- Examine how scopes can be nested.
+- Demonstrate how the environment in which a function is created gets added to
+  its scope chain.
+- Describe how the scope chain is traversed to resolve variable lookup.
 
 ## Introduction
 
